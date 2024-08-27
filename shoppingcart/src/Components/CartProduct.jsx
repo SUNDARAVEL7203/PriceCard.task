@@ -6,8 +6,9 @@ import { CartContext } from "../Features/ContextProvider";
 
 const CartProduct = ({ product }) => {
     const { cart, dispatch } = useContext(CartContext);
+
     const Increase = (id) => {
-        const Index = cart.findIndex(p => p.id === id)
+        const Index = cart.findIndex((p) => p.id === id)
         if (cart[Index].quantity < 10) {
             dispatch({ type: "Increase", id });
           }
